@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-from sklearn.metrics import r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from keras.models import Sequential
@@ -42,8 +41,6 @@ plt.show()
 mse = model.evaluate(X_test, y_test)
 print("Mean Squared Error on Test Set:", mse)
 y_pred = model.predict(X_test)
-r2 = r2_score(y_test, y_pred)
-print("R2 Score on Test Set:", r2)
 
 plt.scatter(y_test, y_pred)
 plt.xlabel("Actual Values")
